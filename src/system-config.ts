@@ -3,15 +3,42 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'snapsvg': 'vendor/snapsvg/dist/snap.svg.js'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  '@angular2-material/core': {
+    format: 'cjs',
+    defaultExtension: 'js',
+    main: 'core.js'
+  },
+  '@angular2-material/card': {
+    format: 'cjs',
+    defaultExtension: 'js',
+    main: 'card.js'
+  },
+  '@angular2-material/checkbox': {
+    format: 'cjs',
+    defaultExtension: 'js',
+    main: 'checkbox.js'
+  },
+  '@angular2-material/button': {
+    format: 'cjs',
+    defaultExtension: 'js',
+    main: 'button.js'
+  },
+  '@angular2-material/icon': {
+    format: 'cjs',
+    defaultExtension: 'js',
+    main: 'icon.js'
+  }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
  * Everything underneath this line is managed by the CLI.
+ * ,
  **********************************************************************************************/
 const barrels: string[] = [
   // Angular specific barrels.
@@ -29,6 +56,12 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/+routedemo',
+  'app/+routetest',
+  'app/+http',
+  'app/+http/+user',
+  'app/+routedemo/+childrouter',
+  'app/loading',
   /** @cli-barrel */
 ];
 
@@ -45,7 +78,10 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
-    'main': 'main.js'
+    'main': 'main.js',
+    'moment': 'moment/moment.js',
+    '@angular2-material': 'vendor/@angular2-material',
+    'snapsvg': 'snapsvg/dist/snap.svg.js',
   },
   packages: cliSystemConfigPackages
 });

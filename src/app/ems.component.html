@@ -1,3 +1,54 @@
-<h1>
-  {{title}}
-</h1>
+<div id="pagelet_bluebar" data-referrer="pagelet_bluebar">
+  <div id="blueBarDOMInspector">
+    <div class="_53jh">
+      <div class="loggedout_menubar_container">
+        <div class="clearfix loggedout_menubar">
+          <div class="lfloat _ohe">
+            <h1><a [routerLink]="['/right:routetest']" title="{{title}}"><i class="fb_logo img sp_IIuy94UEXRV sx_6bf598"><u>Enterprise Information Portal System</u></i></a></h1></div>
+          <div class="menu_login_container rfloat _ohf">
+            <form id="login_form" action="https://www.facebook.com/login.php?login_attempt=1&amp;lwv=110" method="post" novalidate="1"
+              onsubmit="return window.Event &amp;&amp; Event.__inlineSubmit &amp;&amp; Event.__inlineSubmit(this,event)">
+              <input type="hidden" name="lsd" value="AVobM-H3" autocomplete="off">
+              <table cellspacing="0" role="presentation">
+                <tbody>
+                  <tr>
+                    <td class="html7magic"><label for="email">邮箱/手机</label></td>
+                    <td class="html7magic"><label for="pass">密码</label></td>
+                  </tr>
+                  <tr>
+                    <td><input type="email" class="inputtext" name="email" id="email" value="" tabindex="1"></td>
+                    <td><input type="password" class="inputtext" name="pass" id="pass" tabindex="2"></td>
+                    <td><label class="uiButton uiButtonConfirm" id="loginbutton" for="u_0_w"><input value="登录" tabindex="4" type="submit" id="u_0_w"></label></td>
+                  </tr>
+                  <tr>
+                    <td class="login_form_label_field">
+                      <div><input type="hidden" autocomplete="off" checked="1" name="persistent"><input type="hidden" name="default_persistent"
+                          value="1"></div>
+                    </td>
+                    <td class="login_form_label_field"><a href="/recover/initiate?lwv=110">忘记帐号？</a></td>
+                  </tr>
+                </tbody>
+              </table><input type="hidden" autocomplete="off" name="timezone" value="-480" id="u_0_x"><input type="hidden" autocomplete="off"
+                name="lgndim" value="eyJ3IjoxNjAwLCJoIjo5MDAsImF3IjoxNjAwLCJhaCI6ODYwLCJjIjoyNH0=" id="u_0_y"><input type="hidden"
+                name="lgnrnd" value="175916_ovTE"><input type="hidden" id="lgnjs" name="lgnjs" value="1463792361"><input type="hidden"
+                autocomplete="off" id="locale" name="locale" value="zh_CN"><input type="hidden" autocomplete="off" name="next"
+                value="https://www.facebook.com/"><input type="hidden" name="qsstamp" value="W1tbOSwxNCwzNyw4NSwxMTEsMTE0LDEyMiwxMjQsMTI3LDEzOSwxNjgsMjExLDIyOSwyMzcsMjQ1LDI1NiwyNTgsMjY4LDI4MiwyOTEsMjk1LDI5OCwzMDcsMzU2LDM1OCwzNjIsMzY3LDM3NCwzNzYsMzgwLDQxMCw0MjUsNDM4LDQ1OSw0OTUsNTAwLDUyNCw1MjUsNTc5LDYzNSw2NzgsODg3XV0sIkFabVI3X3lZS3hKYnpVWjFWczdiblF3b2VyZnJhSnNwSzRJTEZNSTcxVVlyTndTR3dSWFduTW5oaEJmbTMzdFRIczFtN0ZhbUw1ZTI4a3Z3WEtLZnhrbnRKaVlXdXdEc2NES0xUS3VuajlBSlN1bnE3NlZVbF9ETXFTOVRqSTM4Zmp1SkJjdmxCOEYwdmU3TFFYZlUyemp6YU84LUgzclVEblNFby1IQ3pUOGJ3dmw1TGlMQmJxQTBHZkFkSWdLaDF5WEo5WGtWakZrRHNTOGpkMXlUeUk3dWZfT1VRQWtXZHZCS1dfeFVqMGFLSWRuTE5lWVBVWUFBaWpBWU12YmtfajZmTjRGbkRyUl95cGFCLVdldlFEd0MiXQ=="></form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<a [routerLink]="['/right:routetest']">Home</a>
+<a [routerLink]="['/right:httpdemo']">HttpDemo</a>
+<a [routerLink]="['/right:routetest']">RouteTest</a>
+<a [routerLink]="['right:routedemo/']">RouteDemo</a>
+<a [routerLink]="['right:routedemo/childview:childrouter/']">ChildRouter(cv1)</a>
+<a [routerLink]="['aux:routedemo/childview2:childrouter']">ChildRouter(cv2)</a>
+
+<pageloading></pageloading>
+<loading-container></loading-container>
+<router-outlet></router-outlet>
+<router-outlet name="right"></router-outlet>
+<router-outlet name="left"></router-outlet>
+<router-outlet name="aux"></router-outlet>

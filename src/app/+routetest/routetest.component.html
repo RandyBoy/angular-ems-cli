@@ -1,0 +1,9 @@
+<button (click)="showPageLoading('random')">svgAnimate</button>
+<button (click)="pageStandby()">Loading</button> 
+<button (click)="again()">SelfLoading</button>
+<loading-container [showLoading] ="isloading">
+  <div>
+    <img src="/app/loading/html.jpg">
+    <img src="/app/loading/html.jpg">
+  </div>
+</loading-container>

@@ -1,0 +1,16 @@
+@import 'bower_components/animatewithsass/animate.scss';
+
+.card-img-top{
+    @include fadeIn();
+    @include rotateIn();
+    max-height: 100px;
+}
+.input-group-addon {
+    width: 80px
+}
+.input-group {
+    margin-bottom: 16px
+}
+.card-block{
+    @include bounceInLeft();
+}

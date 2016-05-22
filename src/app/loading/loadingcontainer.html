@@ -1,0 +1,21 @@
+<div [ngSwitch]="loading || showLoading" [class.loading-indicator]="loading || showLoading">
+    <div *ngSwitchWhen="false">
+        <ng-content></ng-content>
+    </div>
+    <div *ngSwitchWhen="true">
+        <div class='uil-default-css'>
+            <div class='line0'> </div>
+            <div class='line30'></div>
+            <div class='line60'></div>
+            <div class='line90'></div>
+            <div class='line120'></div>
+            <div class='line150'></div>
+            <div class='line180'></div>
+            <div class='line210'></div>
+            <div class='line240'></div>
+            <div class='line270'></div>
+            <div class='line300'></div>
+            <div class='line330'></div>
+        </div>
+    </div>
+</div>

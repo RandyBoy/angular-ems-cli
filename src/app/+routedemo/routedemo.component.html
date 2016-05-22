@@ -1,0 +1,21 @@
+<a [routerLink]="['/routedemo']">Home-1</a>
+<a [routerLink]="['./aux:childrouter/']">RouteDemo</a>
+<a [routerLink]="['/right:routedemo/childrouter/',{abc:'dsdf',def:'sowdk'}]">ChildRouter</a>
+<a [routerLink]="['./','childview2:childrouter']">ChildRouter</a>
+<!--<button (click)="">Loading</button>-->
+<div>
+  <img src="/app/loading/html.jpg">
+  <img src="/app/loading/html.jpg">
+</div>
+
+<router-outlet></router-outlet>
+<router-outlet name="childview"></router-outlet>
+<router-outlet name="childview2"></router-outlet>
+<router-outlet name="aux"></router-outlet>
+
+<div id="root">
+  <div id="root_footer"></div>
+</div>
+<div id="footer">
+  <p>Footer content goes here.</p>
+</div>

@@ -1,0 +1,186 @@
+p {
+    color: #369; 
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid;
+}
+a {
+	position: relative;
+	display: inline-block;
+	outline: none;
+	text-decoration: none;
+	color: #000;
+	font-size: 16px;
+	padding: 5px 5px;
+}
+
+a:hover::before, a:hover::after { position: absolute; }
+a:hover::before { content: "\5B"; left: -5px; }
+a:hover::after { content: "\5D"; right:  -5px; }
+
+form {
+    margin: 0;
+    padding: 0;
+}
+user agent stylesheetform {
+    display: block;
+    margin-top: 0em;
+}
+
+._53jh {	
+    background-color: #3b5998;
+    background-image: linear-gradient(#4e69a2, #3b5998 50%);
+    border-bottom: 1px solid #133783;
+}
+.loggedout_menubar_container {
+    height: 82px;
+    min-width: 980px;
+}
+.clearfix {
+    zoom: 1;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+.loggedout_menubar ::after {
+    margin: 0 auto;
+    padding-top: 13px;
+    width: 980px;
+}
+._ohe {
+    float: left;
+}
+._ohf {
+    float: right;
+}
+.rfloat {
+    float: right;
+}
+.menu_login_container .html7magic label {
+    color: #fff;
+    font-weight: normal;
+    padding-left: 1px;
+}
+.menu_login_container .html7magic {
+    padding-bottom: 4px;
+}
+.menu_login_container table tr td {
+    padding: 0 0 0 14px;
+}
+.menu_login_container .inputtext, .menu_login_container .inputpassword {
+    border-color: #1d2a5b;
+    margin: 0;
+    width: 142px;
+}
+.uiButtonConfirm {
+    background-image: url(app/uMuROeH2joN.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 0 -49px;
+    background-color: #5b74a8;
+    border-color: #29487d #29447e #1a356e;
+}
+.uiButton, .uiButtonSuppressed:active, .uiButtonSuppressed:focus, .uiButtonSuppressed:hover {
+    background-image: url(app/uMuROeH2joN.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 0 -98px;
+    background-color: #e9ebee;
+    border: 1px solid #999;
+    border-bottom-color: #888;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+}
+.uiButton {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 13px;
+    padding: 2px 6px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
+}
+._6v {
+    font-weight: bold;
+}
+._6o {
+    font-size: 20px;
+    line-height: 126%;
+}
+._6wl {
+    background: linear-gradient(#67ae55, #578843);
+    background-color: #69a74e;
+    box-shadow: inset 0 1px 1px #a4e388;
+    border-color: #3b6e22 #3b6e22 #2c5115;
+}
+._6wk {
+    padding: 20px 30px;
+}
+._6j {
+    border: 1px solid;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: 1px;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
+
+
+// * { margin:0; padding:0; }
+// p { font-size:2em; }
+// .info { background:#ff0; }
+// p.info { background:#ff0; }
+// p.info.error { color:#900; font-weight:bold; }
+// #info { background:#ff0; }
+// p#info { background:#ff0; }
+
+// div p { color:#f00; }
+// #nav li { display:inline; }
+// #nav a { font-weight:bold; }
+// div > strong { color:#f00; }
+// p + p { color:#f00; }
+
+// p[title] { color:#f00; }
+// div[class=error] { color:#f00; }
+// td[headers~=col1] { color:#f00; }
+// p[lang|=en] { color:#f00; }
+// blockquote[class=quote][cite] { color:#f00; }
+
+// p:first-child { font-style:italic; }
+// input[type=text]:focus { color:#000; background:#ffe; }
+// input[type=text]:focus:hover { background:#fff; }
+// q:lang(sv) { quotes: "\201D" "\201D" "\2019" "\2019"; }
+
+// p:first-line { font-weight:bold; color:#600; }
+// .preamble:first-letter { font-size:1.5em; font-weight:bold; }
+// .cbb:before { content:""; display:block; height:17px; width:18px; background:url(top.png) no-repeat 0 0; margin:0 0 0 -18px; }
+// a:link:after { content: " (" attr(href) ") "; }
+
+// p ~ ul { background:#ff0; }
+
+// div[id^="nav"] { background:#ff0; }
+
+// input[type="text"]:disabled { background:#ddd; }
+
+// p:nth-child(3) { color:#f00; }
+// p:nth-child(odd) { color:#f00; }
+// p:nth-child(even) { color:#f00; }
+// p:nth-child(3n+0) { color:#f00; }
+// p:nth-child(3n) { color:#f00; }
+// tr:nth-child(2n+11) { background:#ff0; }
+// tr:nth-last-child(2) { background:#ff0; }
+// p:last-child { background:#ff0; }
+// p:only-child { background:#ff0; }
+// p:empty { background:#ff0; }
+
+// :not(p) { border:1px solid #ccc; }
