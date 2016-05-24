@@ -20,7 +20,7 @@ import {LoadingContainer} from './loading/loadingcontainer';
   selector: 'ems-app',
   templateUrl: 'ems.component.html',
   styleUrls: ['ems.component.css'],
-  directives: [ROUTER_DIRECTIVES, MdCheckbox, MD_CARD_DIRECTIVES, MdButton, LoadingComponent, PageLoadingComponent,LoadingContainer]
+  directives: [ROUTER_DIRECTIVES, MdCheckbox, MD_CARD_DIRECTIVES, MdButton, LoadingComponent, PageLoadingComponent, LoadingContainer]
 })
 @Routes([
   { path: '/', component: RoutedemoComponent },
@@ -41,6 +41,12 @@ export class EmsAppComponent extends Base implements OnActivate, CanDeactivate {
     // Rx.Observable.timer(1000, 100).take(1).subscribe(x => {
     //   this.pageLoading = false;
     // });
+    // this.root.name = "root";
+    // this.root.parent = null;
+    // this.root.childs.push({ name: "child1", parent: "root", childs: [{ name: "child11", parent: "child1", childs: [] }, { name: "child12", parent: "child1", childs: [] }] }, { name: "child2", parent: "root", childs: [] });
+    console.log(this.root);
+    console.log(this.expandByLevel(this.root));
+    console.log(this.expand(this.root));
   }
   title = 'Enterprise Information Portal System';
   //moment:moment = (<any>moment)['default'] || moment;
@@ -52,6 +58,55 @@ export class EmsAppComponent extends Base implements OnActivate, CanDeactivate {
     this.router.navigate(['/routedemo']);
 
   }
+  root = {
+    name: "root", parent: null, childs: [
+      {
+        name: "child1", parent: "root", childs:
+        [
+          { name: "child11", parent: "child1", childs: [] },
+          { name: "child12", parent: "child1", childs: [] }
+        ]
+      },
+      {
+        name: "child2", parent: "root", childs:
+        [
+          {
+            name: "child21", parent: "child2", childs:
+            [
+              { name: "child211", parent: "child21", childs: [] },
+              { name: "child212", parent: "child21", childs: [] }
+            ]
+          },
+          { name: "child22", parent: "child2", childs: [] }
+        ]
+      }
+    ]
+  };
+
+  expand(nodeObj: any) {
+    let nodeLists = new Array<string>();
+    nodeLists.push(nodeObj.name);
+    nodeObj.childs.forEach(node => {
+      nodeLists = nodeLists.concat(this.expand(node));
+    });
+    return nodeLists;
+  }
+
+  expandByLevel(nodeObj) {
+    let nodeLists = new Array<string>();
+    let nodeChilds = [nodeObj];
+    while (nodeChilds.length > 0) {
+      let curNode = nodeChilds.shift();
+      if (curNode.parent === null) {
+        nodeLists.push(curNode.name);
+      }
+      curNode.childs.forEach(node => {
+        nodeChilds.push(node);
+        nodeLists = nodeLists.concat(node.name);
+      });
+    }
+    return nodeLists;
+  }
 
 
   ngOnInit() {
@@ -60,11 +115,30 @@ export class EmsAppComponent extends Base implements OnActivate, CanDeactivate {
     // delayedClicks.subscribe(x => console.log(x));
     // console.log("routerOnActivateAtEmsApp");
   }
-  routerOnActivate() {
-    // this.pageLoading = true;
-    // Rx.Observable.timer(3000, 100).take(1).subscribe(x => {
-    //   this.pageLoading = false;
-    // });
-  }
+  // routerOnActivate() {
+  //   // this.pageLoading = true;
+  //   // Rx.Observable.timer(3000, 100).take(1).subscribe(x => {
+  //   //   this.pageLoading = false;
+  //   // });
+  //   super.routerOnActivate();
+  // }
 
+
+
+}
+
+/**
+ * test
+ */
+class test {
+  /**
+   *
+   */
+  constructor() {
+    this.childs = new Array<test>();
+
+  }
+  name: string;
+  parent: string;
+  childs: Array<test>;
 }
