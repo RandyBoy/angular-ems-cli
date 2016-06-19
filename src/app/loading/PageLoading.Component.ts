@@ -1,3 +1,4 @@
+/// <reference path="../../typings.d.ts" />
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NgIf, NgClass } from '@angular/common';
 import {TimerWrapper} from '@angular/common/src/facade/async';
@@ -26,7 +27,6 @@ export class PageLoadingComponent extends Base implements OnInit {
         super();
         this.pageLoadingStream.subscribe((v: any) => {
             if (v.m === "show") {
-                // Rx.Observable.interval(50).take(1).subscribe(i => this.showLoading());
                 this.showLoading();
             }
             if (v.m === "hide") {
@@ -36,13 +36,8 @@ export class PageLoadingComponent extends Base implements OnInit {
     }
 
     ngOnInit() {
-        ;;
+
     }
-
-    // ngAfterViewInit() {
-    //     // this.Animater({ el: "#paper", effect: "random" });
-
-    // }
 
     showLoading() {
         let checkSubscriber = this.checkStream.subscribe((i) => {

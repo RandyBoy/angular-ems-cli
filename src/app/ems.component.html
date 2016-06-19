@@ -45,6 +45,10 @@
 <a [routerLink]="['right:routedemo/']">RouteDemo</a>
 <a [routerLink]="['right:routedemo/childview:childrouter/']">ChildRouter(cv1)</a>
 <a [routerLink]="['aux:routedemo/childview2:childrouter']">ChildRouter(cv2)</a>
+<button (click)="updatedata()">更新数据</button>
+<p>
+  {{alldata}}
+</p>
 
 <pageloading></pageloading>
 <loading-container></loading-container>

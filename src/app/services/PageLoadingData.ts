@@ -4,9 +4,11 @@ export class PageLoadingData {
   isShow: boolean = false;
   isAnimateSVG: boolean = false;
   pageLoadingStream: Rx.Subject<any>;
-  
+
+  comps: Map<string, any> = new Map<string, any>();
+
   constructor() {
     this.pageLoadingStream = new Rx.Subject<any>();
-   
+
   }
 }

@@ -11,13 +11,16 @@ import {LoadingContainer} from '../loading/loadingcontainer';
   selector: 'app-routetest',
   templateUrl: 'routetest.component.html',
   styleUrls: ['routetest.component.css'],
-  directives: [LoadingContainer]
+  directives: [LoadingContainer],
+  inputs:['name']
 
 })
 export class RoutetestComponent extends Base implements OnInit, OnActivate, OnChanges, CanDeactivate {
 
   constructor(private dcl: DynamicComponentLoader, private viewContainerRef: ViewContainerRef) {
     super();
+    this.name = "testcmp";
+    this.getComps.set(this.name,this);
     this.anyncData();
   }
   anyncData() {
@@ -44,8 +47,13 @@ export class RoutetestComponent extends Base implements OnInit, OnActivate, OnCh
   again() {
     this.startLoading();
     setTimeout(() => {
-     this.endLoading();
+      this.endLoading();
     }, 3000);
+    let rootCmp = this.getComps.get("mainapp");
+    console.log(rootCmp);
+    //console.log(rootCmp.expand(rootCmp.root));
+    console.log(rootCmp.expandByLevel(rootCmp.root));
+    console.log(rootCmp.name);
   }
 
 }

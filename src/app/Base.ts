@@ -1,14 +1,11 @@
 
 import PageLoadingService from '../app/services/PageLoadingService';
-import * as Rx from 'rxjs/Rx';
+import * as Rx from 'rxjs/rx';
 
 export class Base {
-    loadingStream: Rx.Subject<any>;
+    appComps: Map<string, any>;
     constructor() {
-        this.loadingStream = new Rx.Subject<any>();
     }
-
-
     public get pageLoading(): boolean {
         return PageLoadingService.isLoading;
     }
@@ -21,7 +18,9 @@ export class Base {
     public get pageShow(): boolean {
         return PageLoadingService.isShow;
     }
-
+    public get getComps(): Map<string, any> {
+        return PageLoadingService.comps;
+    }
     public set pageShow(v: boolean) {
         PageLoadingService.isShow = v;
     }
@@ -38,13 +37,6 @@ export class Base {
         return PageLoadingService.pageLoadingStream;
     }
 
-    // public get loadingStream(): Rx.Subject<any> {
-    //     if (!this.loadingStream_) {
-    //         this.loadingStream_ = new Rx.Subject<any>();
-    //     }
-    //     return this.loadingStream_;
-    // }
-
     showPageLoading(effect: string) {
         this.pageLoadingStream.next({ m: "show", p: effect });
     }
@@ -60,9 +52,9 @@ export class Base {
     }
 
     isloading: boolean;
-    
+
     public loading: boolean;
-    
+
     standby() {
         this.loading = true;
     }
@@ -76,20 +68,14 @@ export class Base {
     pageStandby() {
         this.pageLoadingStream.next({ m: "standby" });
     }
-    
+
     endLoading() {
-        //this.loadingStream.next({ m: "ready" });
         this.isloading = false;
     }
     startLoading() {
-       // this.loadingStream.next({ m: "standby" });
-       this.isloading = true;
+        this.isloading = true;
     }
-
-
-
-
-
+    name:string;
 
 
 

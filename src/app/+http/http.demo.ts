@@ -31,6 +31,10 @@ export class HttpDemo extends Base implements OnInit, OnActivate, CanDeactivate 
 
     ngOnInit() {
         this.users = this.datas;
+        let rootCmp = this.getComps.get("testcmp");
+        console.log(rootCmp);
+        //console.log(rootCmp.expand(rootCmp.root));
+
         // this.pageLoading = true;
         // this.httpservice.getUsers().subscribe(data => {
         //     this.users = data;

@@ -10,6 +10,10 @@ if (environment.production) {
   enableProdMode();
 }
 
+// String.prototype.like = function (value: string) {
+//   return (new RegExp(value, 'i')).test(this);
+// };
+
 bootstrap(EmsAppComponent, [ROUTER_PROVIDERS,
   HTTP_PROVIDERS,
   provide(LocationStrategy, { useClass: PathLocationStrategy }),

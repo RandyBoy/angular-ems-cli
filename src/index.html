@@ -6,7 +6,7 @@
   <title>Ems</title>
   <base href="/"> {{content-for 'head'}}
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Service worker support is disabled by default.
@@ -20,17 +20,19 @@
     }
   </script>
   -->
+  
 </head>
 
 <body>
-  <ems-app>Loading...</ems-app>
+  <ems-app [name]="mainApp">Loading...</ems-app>
   <pageloading></pageloading>
+  <script src="app/stringextend.js"> </script>
   <script src="vendor/snapsvg/dist/snap.svg.js"></script>
   <script src="vendor/es6-shim/es6-shim.js"></script>
   <script src="vendor/reflect-metadata/Reflect.js"></script>
   <script src="vendor/systemjs/dist/system.src.js"></script>
   <script src="vendor/zone.js/dist/zone.js"></script>
-  
+
 
 
 
